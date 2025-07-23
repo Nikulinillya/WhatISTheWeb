@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype | web</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css-style.css">
+</head>
+
+<body>
+
+    <nav class="mobile-nav">
+        <button class="burger" onclick="toggleMenu()" id="burgerBtn">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </button>
+        <a href="index.html" class="logo">What Is The Web?...</a>
+    </nav>
+
+    <div class="mobile-menu" id="menu">
+        <a href="#home">Головна</a>
+        <a href="#css-tags">Про CSS-властивості</a>
+        <a href="#FAQ">FAQ - що важливо?</a>
+        <a href="#tags-list">Приклади властивостей</a>
+    </div>
+
+    <script>
+        const menu = document.getElementById("menu");
+        const burger = document.getElementById("burgerBtn");
+        const links = menu.querySelectorAll("a");
+
+        function toggleMenu() {
+            menu.classList.toggle("show");
+            burger.classList.toggle("active");
+        }
+
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("show");
+                burger.classList.remove("active");
+            });
+        });
+    </script>
+
+    <aside></aside>
+
+    <header>
+        <div id="home"></div>
+        <div id="scroll-progress"></div>
+
+        <script src="ProgressBar.js"></script>
+
+        <div class="icon-bkg">
+            <i class="fa-solid fa-code"></i>
+            <i class="fa-solid fa-microchip"></i>
+            <i class="fa-solid fa-terminal"></i>
+            <i class="fa-solid fa-code-compare"></i>
+            <i class="fa-solid fa-gear"></i>
+            <i class="fa-solid fa-network-wired"></i>
+        </div>
+
+        <h1>Що таке css?</h1>
+
+        <div class="anim-list-header">
+            <div class="content">
+                <div class="item">CSS</div>
+                <div class="item">color</div>
+                <div class="item">bkg</div>
+                <div class="item">style</div>
+                <div class="item">padding</div>
+                <div class="item">text</div>
+                <div class="item">font</div>
+                <div class="item">Code</div>
+                <div class="item">position</div>
+                <div class="item">width</div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="nav">
+            <nav>
+                <a href="index.html">Home</a>
+                <div>
+                    <a href="html-info.html">HTML</a>
+                    <a href="css-info.html">CSS</a>
+                    <a href="Js-info.html">JavaScript</a>
+                </div>
+                <a href="#contacts">contacts</a>
+            </nav>
+        </div>
+
+        <section id="css-tags" class="section-info">
+            <div>
+                <h2>CCS - мова стилів.</h2>
+                <p>CSS (Cascading Style Sheets) — це мова <span>стилів</span>, яка використовується для оформлення
+                    HTML-документів.
+                    Вона дозволяє <span>налаштовувати</span> кольори, шрифти, розміри, розміщення елементів, а також
+                    <span>адаптивність</span> для різних
+                    пристроїв. Простими словами CSS <span>прикрашає</span> весь сайт та робить його
+                    <span>приємним</span> на вигляд.
+                </p>
+            </div>
+            <img src="css-info.png" alt="photo" width="500px" height="300px">
+        </section>
+
+        <section class="section-slider">
+            <h2 class="anim-h2">Приклади властивостей</h2>
+            <div class="slider-wrapper">
+                <div class="slider" id="slider">
+                    <div class="slide">
+                        <h3><span>color</span> - зміна кольору тексту.</h3>
+                        <p>color змінює колір тексту на будь який. Доступні кольори в форматах rgb, rgba, hls, hwb, lab,
+                            ich, oklab, oklch.</p>
+                        <code>p { color: red; }
+                        </code>
+                        <p>Осьтак виглядає запис властивості color, параграф тепер зміне колір тексту на червоний</p>
+                    </div>
+                    <div class="slide">
+                        <h3><span>background</span> - зміна кольору фону.</h3>
+                        <p> background змінює колір фону на будь який, що робить веб сторінку більш приємнішою.</p>
+                        <code>section { backgroud: #fff }
+                        </code>
+                        <p>Осьтак виглядає запис властивості background-color, секція зміне колір фону на білий.</p>
+                    </div>
+                    <div class="slide">
+                        <h3><span>padding</span> - внутрішні відступи.</h3>
+                        <p>padding змінює відстань від елементу до країв іншого елементу в який він вкладений.</p>
+                        <code>div { padding: 20px }
+                        </code>
+                        <p>Осьтак виглядає запис властивості padding, відстань від div до країв елементу в який він
+                            вкладений = 20px.</p>
+                    </div>
+                    <div class="slide">
+                        <h3><span>margin</span> - зовнішні відступи.</h3>
+                        <p>margin змінює відстань від елементу до іншого елементу який є сусіднім.</p>
+                        <code>div { margin: 50px }
+                        </code>
+                        <p>Осьтак виглядає запис властивості margin, відстань від div до іншого елементу = 50px.</p>
+                    </div>
+                    <div class="slide">
+                        <h3><span>border</span> - рамка</h3>
+                        <p>border створює рамку навколо елементу, в якої є багато налаштувань ( color, radius, type...).
+                        </p>
+                        <code>h1 { border: 2px solid red }
+                        </code>
+                        <p>Осьтак виглядає запис властивості border, в заголовка з'явилась суцільна (solid) рамка
+                            товщиною 2px червоного коліру.</p>
+                    </div>
+                    <div class="slide">
+                        <h3><span>font-size</span> - розмір тексту.</h3>
+                        <p>font-size працює просто, він змінює розмір тексту. Задавати його можна порізному: px, %, rem.
+                        </p>
+                        <code>h1 { font-size: 50px }
+                        </code>
+                        <p>Осьтак виглядає запис властивості font-size, заголовок став більший, тепер його розмір
+                            становить 50px.</p>
+                    </div>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                </div>
+                <div class="scroll-controls">
+                    <button class="scroll-btn" onclick="scrollSlider(-1)">back</button>
+                    <button class="scroll-btn" onclick="scrollSlider(1)">forward</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="FAQ" class="section-FAQ">
+            <img style="position: absolute; z-index: -1; left: -100px; top: 0;" src="laptop.jpg" alt="photo"
+                width="1000px" height="500px">
+            <div>
+                <h2 class="anim-h2">FAQ: Що важливо знати?</h2>
+                <details>
+                    <summary>Чим CSS відрізняється від HTML?</summary>
+                    <p>HTML створює структуру сторінки, а CSS — її зовнішній вигляд.</p>
+                </details>
+                <details>
+                    <summary>Як підключити CSS до HTML?</summary>
+                    <p>За допомогою тега &lt;link&gt; у розділі &lt;head&gt;:
+                        <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>
+                    </p>
+                </details>
+                <details>
+                    <summary>Що таке селектори?</summary>
+                    <p>Селектори — це правила, які вказують, до яких HTML-елементів застосовувати стилі.</p>
+                </details>
+            </div>
+        </section>
+
+        <section id="tags-list" class="section-tags">
+            <h2 class="anim-h2">Популярні CSS-властивості</h2>
+            <div class="tag-list">
+                <div class="tag-card">
+                    <strong>color</strong>
+                    <p>Змінює колір тексту: <code>color: red;</code></p>
+                </div>
+                <div class="tag-card">
+                    <strong>background-color</strong>
+                    <p>Фон елемента: <code>background-color: #fff;</code></p>
+                </div>
+                <div class="tag-card">
+                    <strong>margin</strong>
+                    <p>Зовнішній відступ: <code>margin: 20px;</code></p>
+                </div>
+                <div class="tag-card">
+                    <strong>padding</strong>
+                    <p>Внутрішній відступ: <code>padding: 15px;</code></p>
+                </div>
+                <div class="tag-card">
+                    <strong>border</strong>
+                    <p>Рамка навколо: <code>border: 1px solid #000;</code></p>
+                </div>
+                <div class="tag-card">
+                    <strong>font-size</strong>
+                    <p>Розмір шрифту: <code>font-size: 18px;</code></p>
+                </div>
+                <div class="tag-card">
+                    <strong>font-family</strong>
+                    <p>Тип шрифту: <code>font-family: Arial;</code></p>
+                </div>
+                <div class="tag-card">
+                    <strong>display</strong>
+                    <p>Тип елемента: <code>display: flex;</code></p>
+                </div>
+                <div class="tag-card">
+                    <strong>position</strong>
+                    <p>Позиціонування: <code>position: absolute;</code></p>
+                </div>
+                <div class="tag-card">
+                    <strong>width / height</strong>
+                    <p>Розміри: <code>width: 100px;</code>, <code>height: 50px;</code></p>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function scrollSlider(direction) {
+                const slider = document.getElementById('slider');
+                const slide = slider.querySelector('.slide');
+                const gap = 15;
+                const slideWidth = slide.offsetWidth + gap;
+                slider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+            }
+
+            const slider = document.getElementById('slider');
+            const progressFill = document.getElementById('progressFill');
+
+            slider.addEventListener('scroll', () => {
+                const maxScroll = slider.scrollWidth - slider.clientWidth;
+                const scrollLeft = slider.scrollLeft;
+                const percent = (scrollLeft / maxScroll) * 100;
+                progressFill.style.width = percent + '%';
+            });
+        </script>
+    </main>
+
+    <footer id="contacts">
+        <h1><i class="fa-solid fa-user-secret"></i> What is the Web?</h1>
+        <ul>
+            <li>+380 (96) 012 91 34</li>
+            <li>WhatWeb@gmail.com</li>
+            <li>t.me/WhatIsTheWeb_ua</li>
+        </ul>
+
+        <p>2025 "What the Web?" copyright reserved</p>
+    </footer>
+
+    <button id="toTopBtn" title="Вгору"><i class="fa-solid fa-angle-up"></i></button>
+
+    <script>
+        const toTopBtn = document.getElementById("toTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                toTopBtn.style.display = "block";
+            } else {
+                toTopBtn.style.display = "none";
+            }
+        });
+
+        toTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+
+</body>
+
+</html>

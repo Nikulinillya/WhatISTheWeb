@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype | web</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style-html.css">
+</head>
+
+<body>
+
+    <nav class="mobile-nav">
+        <button class="burger" onclick="toggleMenu()" id="burgerBtn">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </button>
+        <a href="index.html" class="logo">What Is The Web?...</a>
+    </nav>
+
+    <div class="mobile-menu" id="menu">
+        <a href="#home">Головна</a>
+        <a href="#html-tags">Про HTML теги</a>
+        <a href="#structure">Структура сайту</a>
+        <a href="#tags-list">Список тегів</a>
+    </div>
+
+    <script>
+        const menu = document.getElementById("menu");
+        const burger = document.getElementById("burgerBtn");
+        const links = menu.querySelectorAll("a");
+
+        function toggleMenu() {
+            menu.classList.toggle("show");
+            burger.classList.toggle("active");
+        }
+
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("show");
+                burger.classList.remove("active");
+            });
+        });
+    </script>
+
+    <aside></aside>
+
+    <header>
+        <div id="home"></div>
+        <div id="scroll-progress"></div>
+
+        <script src="ProgressBar.js"></script>
+
+        <div class="icon-bkg">
+            <i class="fa-solid fa-code"></i>
+            <i class="fa-solid fa-microchip"></i>
+            <i class="fa-solid fa-terminal"></i>
+            <i class="fa-solid fa-code-compare"></i>
+            <i class="fa-solid fa-gear"></i>
+            <i class="fa-solid fa-network-wired"></i>
+        </div>
+        <h1>Що таке html?</h1>
+
+        <div class="anim-list-header">
+            <div class="content">
+                <div class="item">HTML</div>
+                <div class="item">h1</div>
+                <div class="item">p</div>
+                <div class="item">footer</div>
+                <div class="item">header</div>
+                <div class="item">section</div>
+                <div class="item">div</div>
+                <div class="item">Code</div>
+                <div class="item">main</div>
+                <div class="item">@keyframes</div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="nav">
+            <nav>
+                <a href="index.html">Home</a>
+                <div>
+                    <a href="html-info.html">HTML</a>
+                    <a href="css-info.html">CSS</a>
+                    <a href="Js-info.html">JavaScript</a>
+                </div>
+                <a href="#contacts">contacts</a>
+            </nav>
+        </div>
+
+        <section class="hover-cards">
+            <div class="container">
+                <div class="card">
+                    <h1>HTML</h1>
+                    <p>HTML (HyperText Markup Language) — це основа
+                        веб-сторінки, її "каркас". Подібно до того, як
+                        скелет тримає тіло людини, HTML утримує структуру
+                        сайту: заголовки, абзаци, зображення, посилання тощо.
+                    </p>
+                </div>
+                <div class="card">
+                    <h1>TAGS</h1>
+                    <p>HTML складається з тегів — спеціальних
+                        слів у кутових дужках (&lt;tag&gt;), які
+                        вказують браузеру, як відображати
+                        вміст. Наприклад, &lt;p&gt; означає абзац,
+                        а &lt;img&gt; — зображення.
+                    </p>
+                </div>
+                <div class="card">
+                    <h1>MARKUP</h1>
+                    <p>HTML — не мова програмування, а мова розмітки. Вона
+                        описує, як елементи мають бути розміщені на сторінці,
+                        але не керує логікою чи взаємодією (це вже завдання
+                        CSS і JavaScript).
+                    </p>
+                </div>
+                <div class="card">
+                    <h1>BROWSER</h1>
+                    <p>Веб-браузер (наприклад, Chrome або Firefox) — це
+                        "перекладач" HTML. Він читає HTML-код і показує його
+                        у вигляді сайту, який бачить користувач. Без браузера
+                        HTML був би просто текстом з тегами.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="hover-cards-mobile">
+            <div class="slider-wrapper" id="slider">
+                <div class="card">
+                    <h1>HTML</h1>
+                    <p>HTML (HyperText Markup Language) — це основа
+                        веб-сторінки, її "каркас". Подібно до того, як
+                        скелет тримає тіло людини, HTML утримує структуру
+                        сайту: заголовки, абзаци, зображення, посилання тощо.
+                    </p>
+                </div>
+                <div class="card">
+                    <h1>TAGS</h1>
+                    <p>HTML складається з тегів — спеціальних
+                        слів у кутових дужках (&lt;tag&gt;), які
+                        вказують браузеру, як відображати
+                        вміст. Наприклад, &lt;p&gt; означає абзац,
+                        а &lt;img&gt; — зображення.
+                    </p>
+                </div>
+                <div class="card">
+                    <h1>MARKUP</h1>
+                    <p>HTML — не мова програмування, а мова розмітки. Вона
+                        описує, як елементи мають бути розміщені на сторінці,
+                        але не керує логікою чи взаємодією (це вже завдання
+                        CSS і JavaScript).
+                    </p>
+                </div>
+                <div class="card">
+                    <h1>BROWSER</h1>
+                    <p>Веб-браузер (наприклад, Chrome або Firefox) — це
+                        "перекладач" HTML. Він читає HTML-код і показує його
+                        у вигляді сайту, який бачить користувач. Без браузера
+                        HTML був би просто текстом з тегами.
+                    </p>
+                </div>
+            </div>
+
+            <div class="slider-controls">
+                <button class="slider-btn" onclick="scrollSlider(-1)">←</button>
+                <button class="slider-btn" onclick="scrollSlider(1)">→</button>
+            </div>
+
+            <script src="slider-mob.js"></script>
+
+        </section>
+
+        <h2 id="html-tags" class="anim-h2">Що таке теги, та як їх використовують?</h2>
+
+        <section class="tags-section">
+            <article>
+                <p>HTML-теги — це елементи, які використовуються
+                    для побудови <span>структури</span> веб-сторінки. Вони
+                    позначають, де починається і закінчується
+                    певний <span>елемент</span> (наприклад, заголовок, текст,
+                    зображення або посилання).</p>
+                <img style="position: relative; right: 100px;" src="laptop.jpg" alt="photo" width="700px"
+                    height="350px">
+            </article>
+        </section>
+
+        <h2 id="structure" class="info-box-h2">структура сайту складається з...</h2>
+
+        <section class="info-box-section">
+            <div class="info-box">
+                <div class="font">head<br> Шапка документа</div>
+                <div class="back">Містить мета-інформацію:
+                    назву сторінки, кодування, підключення CSS,
+                    скриптів, іконок.<br><br>
+                    Не відображається на самій сторінці напряму.</div>
+            </div>
+            <div class="info-box">
+                <div class="font">body<br> Основа сторінки</div>
+                <div class="back">Тут розміщується весь вміст,
+                    який бачить користувач: текст, зображення,
+                    кнопки, меню.<br><br>
+                    В розділ body входить header, main, footer.</div>
+            </div>
+            <div class="info-box">
+                <div class="font"> Контентні блоки<br> (header, main, footer)</div>
+                <div class="back">Впорядковують сторінку логічно:<br><br>
+                    header — верхній блок із заголовком або логотипом<br>
+                    main — основна частина контенту<br>
+                    footer — нижня частина, авторство, контакти</div>
+            </div>
+            <div class="info-box">
+                <div class="font">Структура тегів</div>
+                <div class="back">Вся сторінка будується за допомогою HTML-тегів, які утворюють дерево: один тег
+                    міститься в іншому.</div>
+            </div>
+        </section>
+
+        <section id="tags-list" class="tags-card-section">
+            <div class="tags-card">
+                <h2>h1 - h6: заголовки</h2>
+                <p>Елементи h1 - h6 використовуються для визначення шести
+                    рівнів заголовків HTML, де <span>h1 є найвищим</span>
+                    (або найважливішим) рівнем, а <span>h6 - найменш важливим.</span><br><br>
+                    Кожна веб-сторінка повинна мати лише один заголовок h1. Оскільки
+                    пошукові системи використовують його для <span>індексації структури</span> та
+                    вмісту веб-документів, обов'язково включіть у нього ключові слова.
+                    Користувацькі агенти можуть використовувати інформацію про
+                    заголовки для автоматичного створення таблиці вмісту документа.<br><br>
+                    Якщо ви хочете змінити розмір тексту, краще не використовувати теги
+                    заголовків. Замість цього ви можете використовувати <span>властивість CSS</span>
+                    font-size. Рекомендується не пропускати рівні заголовків
+                    (h1, h2, h3, h4, h5, h6) та використовувати h1 лише <span>один раз</span> на сторінці.<br><br>
+                    Теги заголовків також мають <span>SEO-цінність</span>. Пошукова система намагається
+                    дізнатися дві речі про вашу сторінку: про що ця сторінка та наскільки вона
+                    хороша. Одним з головних факторів, на які пошукові системи звертають увагу
+                    при визначенні вмісту сторінки, є <span>слова всередині тегів заголовків</span>.
+                    Якщо сторінка має один фрагмент контенту, його основний заголовок має
+                    бути в тегу h1, більші розділи мають бути включені в h2 тощо. Таким чином, ви
+                    можете зробити свій контент більш <span>організованим</span>. Ви повинні пам’ятати,
+                    що ніхто не читає кожне слово контенту.</p>
+                </p>
+                <pre>
+ &lt;h1>сайт про науки&lt;/h1>
+ &lt;h2>розділ математики&lt;/h2>
+ &lt;h3>секція задач&lt;/h3>
+ &lt;h4>легкі задачі&lt;/h4>
+ &lt;h5>складні задачі&lt;/h5>
+ &lt;h6>шось додаткове&lt;/h6></pre>
+                <p>Існує <span>два типи</span> сторінок із контентом: сторінки з одним контентом
+                    та сторінки індексу. На сторінках з одним контентом заголовок
+                    цього фрагмента контенту має бути в h1 ближче до верху <span>body</span>. На
+                    сторінці індексу заголовок сайту або назва індексу зазвичай
+                    розміщується в h1. Тоді заголовки всіх перелічених окремих частин
+                    повинні мати h2.<br><br>
+                    Оскільки теги h1 - h6 є <span>елементами блочного рівня</span>, вони завжди
+                    починаються з нового рядка та займають повну доступну ширину.
+                </p>
+            </div>
+
+            <div class="tags-card">
+                <h2>p: абзац</h2>
+                <p>Тег HTML p – це блочний елемент, який
+                    використовується для визначення <span>абзацу тексту </span>
+                    на веб-сторінці. Він створює новий рядок перед
+                    і після елемента, займаючи повну ширину його
+                    батьківського контейнера.<br><br>
+                    Цей семантичний тег зазвичай використовується для
+                    <span>структурування</span> текстового вмісту на веб-сторінці,
+                    такого як статті, дописи в блогах або описи
+                    продуктів. Ви можете додавати інші теги HTML,
+                    такі як <span>strong</span> або <span>em</span>, всередині тегу p, щоб додати
+                    акцент або форматування до певних слів чи фраз в
+                    абзаці.<br><br>
+                    Правильне структурування текстового вмісту за
+                    допомогою тегу p є важливим, оскільки це може
+                    допомогти покращити <span>доступність</span> та <span>зручність </span>
+                    використання вашої веб-сторінки. Програми
+                    зчитування з екрана та інші допоміжні технології
+                    покладаються на <span>семантичні</span> теги, такі як p, для
+                    точної інтерпретації та представлення вмісту
+                    користувачам.
+                </p>
+                <pre>
+ &lt;p>тут може бути розміщена 
+ стаття або якийсь текст&lt;/p></pre>
+                <p>Тег p використовується <span>парами</span>. Вміст записується між
+                    відкриваючим p та закриваючим /p тегами. Якщо закриваючий тег
+                    пропущено, вважається, що кінець абзацу збігається з початком
+                    наступного елемента <span>блочного рівня</span>.<br><br>
+                    Пробіли між відкриваючим тегом p та його вмістом ігноруються
+                    браузером. Щоб встановити відступ, використовуйте властивість
+                    <span>CSS text-indent</span>.
+                    Тег p не може містити таблиці та інші елементи блочного рівня.
+                </p>
+            </div>
+
+            <div class="tags-card">
+                <h2>section: секція</h2>
+                <p>HTML section – це один із елементів HTML5.
+                    Він використовується для створення <span>окремих
+                        розділів</span> на веб-сторінці, що містять логічно
+                    пов’язаний контент (блок новин, контактну
+                    інформацію тощо). Тег section часто
+                    використовується під час створення <span>цільової
+                        сторінки</span> для поділу сторінки на окремі
+                    логічні блоки.<br><br>
+                    Наприклад, меню навігації має бути обгорнуте
+                    тегом nav, але відображення карти та <span>список
+                        результатів</span> пошуку не мають специфічних
+                    елементів і можуть бути розміщені
+                    всередині section.<br><br>
+                    Тег section може бути вкладений у тег
+                    article, розділяючи контент на <span>групи</span>.
+                    Тому необхідно використовувати заголовки
+                    <span>h1</span> - <span>h6</span> у тегах article та section.
+                    Дозволено використовувати заголовок h2 у
+                    кожному розділі, визначеному за допомогою
+                    тегу section.
+                </p>
+                <pre>
+ &lt;section>
+    &lt;article> 
+        &lt;h1> Привіт, світ!&lt;/h1 
+    &lt;/article>
+ &lt;/section></pre>
+                <p>Не використовуйте тег section як універсальний
+                    контейнер для створення <span>структури сторінки</span>;
+                    для цієї мети слід використовувати тег div.
+                    Тег section використовується <span>парам</span>и. Вміст
+                    записується між початковим <span>(section)</span> та закриваючим
+                    <span>(/section)</span> тегами.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <h1><i class="fa-solid fa-user-secret"></i> What is the Web?</h1>
+        <ul>
+            <li>+380 (96) 012 91 34</li>
+            <li>WhatWeb@gmail.com</li>
+            <li>t.me/WhatIsTheWeb_ua</li>
+        </ul>
+
+        <p>2025 "What the Web?" copyright reserved</p>
+    </footer>
+
+    <button id="toTopBtn" title="Вгору"><i class="fa-solid fa-angle-up"></i></button>
+
+    <script>
+        const toTopBtn = document.getElementById("toTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                toTopBtn.style.display = "block";
+            } else {
+                toTopBtn.style.display = "none";
+            }
+        });
+
+        toTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+
+</html>
