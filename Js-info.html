@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Що таке JavaScript?</title>
+    <link rel="stylesheet" href="js-info.css">
+</head>
+
+<body>
+
+    <nav class="mobile-nav">
+        <button class="burger" onclick="toggleMenu()" id="burgerBtn">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </button>
+        <a href="index.html" class="logo">What Is The Web?...</a>
+    </nav>
+
+    <div class="mobile-menu" id="menu">
+        <a href="#home">головна</a>
+        <a href="#example">приклад коду</a>
+        <a href="#FAQ">FAQ\питання</a>
+        <a href="#term">ключові терміни</a>
+        <a href="#anim">приклад анімації</a>
+        <a href="#table">таблиця Js</a>
+        <a href="#live-editor">Live-редактор</a>
+    </div>
+
+    <script>
+        const menu = document.getElementById("menu");
+        const burger = document.getElementById("burgerBtn");
+        const links = menu.querySelectorAll("a");
+
+        function toggleMenu() {
+            menu.classList.toggle("show");
+            burger.classList.toggle("active");
+        }
+
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("show");
+                burger.classList.remove("active");
+            });
+        });
+    </script>
+
+    <aside></aside>
+
+    <header>
+        <div id="home"></div>
+        <div id="scroll-progress"></div>
+
+        <script src="ProgressBar.js"></script>
+
+        <div class="icon-bkg">
+            <i class="fa-solid fa-code"></i>
+            <i class="fa-solid fa-microchip"></i>
+            <i class="fa-solid fa-terminal"></i>
+            <i class="fa-solid fa-code-compare"></i>
+            <i class="fa-solid fa-gear"></i>
+            <i class="fa-solid fa-network-wired"></i>
+        </div>
+        <h1>Що таке JS?</h1>
+
+        <div class="anim-list-header">
+            <div class="content">
+                <div class="item">const</div>
+                <div class="item">var</div>
+                <div class="item">function</div>
+                <div class="item">JavaScript</div>
+                <div class="item">for</div>
+                <div class="item">while</div>
+                <div class="item">onClick</div>
+                <div class="item">code</div>
+                <div class="item">laptop</div>
+                <div class="item">React</div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="nav">
+            <nav>
+                <a href="#home">Home</a>
+                <div>
+                    <a href="html-info.html">HTML</a>
+                    <a href="css-info.html">CSS</a>
+                    <a href="Js-info.html">JavaScript</a>
+                </div>
+                <a href="#contacts">contacts</a>
+            </nav>
+        </div>
+
+        <section class="section-info">
+            <p><strong>JavaScript</strong> — це мова програмування, яка дозволяє створювати інтерактивні функції на
+                веб-сторінках. З її допомогою можна реагувати на дії користувача, змінювати вміст сторінки без
+                перезавантаження, створювати ігри, анімації, обробляти форми та багато іншого.</p>
+        </section>
+
+        <section id="example" class="example">
+            <article>
+                <h2>Приклад простого коду</h2>
+                <pre><code>
+    // Порахувати суму чисел від 1 до 5
+    let sum = 0;
+    for (let i = 1; i <= 5; i++) {
+        sum += i;
+    }
+    console.log(\"Сума: \" + sum);</code></pre>
+
+                <p><strong>Пояснення:</strong></p>
+                <ul>
+                    <li><code>let sum = 0;</code> — створюємо змінну для підсумку.</li>
+                    <li><code>for</code> — цикл від 1 до 5.</li>
+                    <li><code>sum += i;</code> — додаємо кожне число до <code>sum</code>.</li>
+                    <li><code>console.log(...)</code> — виводимо результат у консоль.</li>
+                </ul>
+            </article>
+            <article>
+                <img src="js-info.png" alt="photo" width="550px" height="550px">
+            </article>
+        </section>
+
+        <section id="FAQ" class="FAQ">
+            <h2 class="anim-h2">Популярні запитання!</h2>
+            <details>
+                <summary>Чи можна використовувати JavaScript без HTML?</summary>
+                <p>Так, але найчастіше він працює разом із HTML і CSS на веб-сторінках.</p>
+            </details>
+            <details>
+                <summary>Чим відрізняється const від let?</summary>
+                <p><code>const</code> — незмінна змінна. <code>let</code> — можна змінювати. Обидві мають блочну область
+                    видимості.</p>
+            </details>
+            <details>
+                <summary>Що таке DOM?</summary>
+                <p>Document Object Model — структура HTML-документа, яку можна змінювати через JavaScript.</p>
+            </details>
+        </section>
+
+        <section id="term" class="section-list">
+            <h2 class="anim-h2">10 ключових термінів JavaScript</h2>
+            <div class="tag-list">
+                <div class="tag-card"><strong>let</strong>
+                    <p>Оголошення змінної, яку можна змінювати.</p>
+                </div>
+                <div class="tag-card"><strong>const</strong>
+                    <p>Оголошення постійної (незмінної) змінної.</p>
+                </div>
+                <div class="tag-card"><strong>function</strong>
+                    <p>Оголошення функції для повторного виконання коду.</p>
+                </div>
+                <div class="tag-card"><strong>if/else</strong>
+                    <p>Умовне виконання коду залежно від значень.</p>
+                </div>
+                <div class="tag-card"><strong>for/while</strong>
+                    <p>Циклічне виконання коду.</p>
+                </div>
+                <div class="tag-card"><strong>return</strong>
+                    <p>Повертає значення з функції.</p>
+                </div>
+                <div class="tag-card"><strong>document</strong>
+                    <p>Обʼєкт для роботи з HTML-документом (DOM).</p>
+                </div>
+                <div class="tag-card"><strong>addEventListener</strong>
+                    <p>Привʼязка обробника до події.</p>
+                </div>
+                <div class="tag-card"><strong>alert</strong>
+                    <p>Виводить вікно повідомлення.</p>
+                </div>
+                <div class="tag-card"><strong>console.log</strong>
+                    <p>Виводить дані у консоль для розробника.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="anim" class="section-interactive">
+            <h2 class="anim-h2">Анімація:<br> Поява → Пульсація → Зникнення</h2>
+            <div class="interactive-box">
+                <div id="animatedElement" class="animated-box">JS + CSS</div>
+                <button onclick="runAnimatedEffect()">Запустити ефект</button>
+            </div>
+
+            <script>
+                function runAnimatedEffect() {
+                    const el = document.getElementById('animatedElement');
+
+                    el.classList.add('show');
+
+                    setTimeout(() => {
+                        el.classList.add('pulsing');
+                    }, 1000);
+
+                    setTimeout(() => {
+                        el.classList.remove('pulsing');
+                        el.classList.add('hide');
+                    }, 3000);
+
+                    setTimeout(() => {
+                        el.classList.remove('show', 'hide');
+                    }, 5000);
+                }
+            </script>
+        </section>
+
+        <section class="section-chart-editor">
+            <article>
+                <h2 class="anim-h2">JavaScript у веб-розробці</h2>
+            </article>
+            <article class="flex">
+                <div id="table">
+                    <div class="chart-container">
+                        <div class="bar" style="--value: 90%"
+                            data-info="Інтерактивність — реакція на дії користувача, динаміка сторінки.">
+                            <span>Інтерактивність</span>
+                        </div>
+                        <div class="bar" style="--value: 60%"
+                            data-info="Клієнтська логіка — обчислення, валідація, фільтри без перезавантаження.">
+                            <span>Клієнтська логіка</span>
+                        </div>
+                        <div class="bar" style="--value: 50%"
+                            data-info="Обробка форм — перевірка правильності введення та миттєвий зворотній зв'язок.">
+                            <span>Обробка форм</span>
+                        </div>
+                        <div class="bar" style="--value: 70%"
+                            data-info="Анімації — живі ефекти, що керуються подіями або станом.">
+                            <span>Анімації</span>
+                        </div>
+                        <div class="bar" style="--value: 30%"
+                            data-info="Робота з API — підключення до сервісів, динамічне оновлення даних.">
+                            <span>Робота з API</span>
+                        </div>
+                    </div>
+                    <div class="tooltip-info" id="tooltipText">Наведи на стовпець, щоб побачити пояснення</div>
+                </div>
+                <div id="live-editor" class="live-editor">
+                    <h3>Live-редактор <span>JavaScript</span></h3>
+                    <p>Введи JS-код нижче та натисни «Запустити»:</p>
+                    <textarea id="jsCode" rows="6" style="width: 100%; font-family: Consolas, monospace; font-weight: 500;"></textarea>
+                    <br><br>
+                    <button onclick="runCode()">Запустити</button>
+                    <h3>Результат:</h3>
+                    <div id="outputBox" style="border: 1px solid #ccc; padding: 20px; background: #f7f7f7; border-radius: 10px; font-size: 20px; "></div>
+                </div>
+            </article>
+
+            <script>
+                const bars = document.querySelectorAll('.bar');
+                const tooltip = document.getElementById('tooltipText');
+
+                bars.forEach(bar => {
+                    bar.addEventListener('mouseenter', () => {
+                        tooltip.textContent = bar.dataset.info;
+                    });
+
+                    bar.addEventListener('mouseleave', () => {
+                        tooltip.textContent = 'Наведи на стовпець, щоб побачити пояснення';
+                    });
+                });
+            </script>
+        </section>
+        <script>
+            function runCode() {
+                const code = document.getElementById("jsCode").value;
+                const output = document.getElementById("outputBox");
+
+                try {
+                    const result = eval(code);
+                    output.innerText = result !== undefined ? result : '✔ Код виконано без повернення значення.';
+                } catch (error) {
+                    output.innerText = '❌ Помилка: ' + error.message;
+                }
+            }
+        </script>
+    </main>
+    
+    <footer id="contacts">
+        <h1><i class="fa-solid fa-user-secret"></i> What is the Web?</h1>
+        <ul>
+            <li>+380 (96) 012 91 34</li>
+            <li>WhatWeb@gmail.com</li>
+            <li>t.me/WhatIsTheWeb_ua</li>
+        </ul>
+
+        <p>2025 "What the Web?" copyright reserved</p>
+    </footer>
+
+    <button id="toTopBtn" title="Вгору"><i class="fa-solid fa-angle-up"></i></button>
+
+    <script>
+        const toTopBtn = document.getElementById("toTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                toTopBtn.style.display = "block";
+            } else {
+                toTopBtn.style.display = "none";
+            }
+        });
+
+        toTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+
+</html>
